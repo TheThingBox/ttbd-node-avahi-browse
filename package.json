@@ -1,0 +1,12 @@
+{
+  "name": "ttbd-node-avahi-browse",
+  "version": "1.0.0",
+  "node-red": {
+      "nodes": {
+          "scan avahi": "scanAvahi.js"
+      }
+  },
+  "dependencies": {
+    "ttbd-exec": "TheThingBox/ttbd-exec#4b806ff"
+  }
+}

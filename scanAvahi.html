@@ -1,0 +1,30 @@
+<script type="text/x-red" data-template-name="scanAvahi">
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="scanAvahi">
+  <p>a local area network scan with avahi</p>
+  <p>msg.scan is fill with a json object</p>
+</script>
+
+<script type="text/javascript">
+  RED.nodes.registerType('scanAvahi',{
+    category: 'function',
+    color:"white",
+    defaults: {
+      name: {value:""}
+    },
+    inputs:1,
+    outputs:1,
+    icon: "scanAvahi.png",
+    label: function() {
+      return this.name|| "scanAvahi"
+    },
+    labelStyle: function() {
+      return this.name?"node_label_italic":"";
+    }
+  });
+</script>
