@@ -5,10 +5,10 @@ module.exports = function(RED) {
   function scanAvahi(n) {
     RED.nodes.createNode(this, n);
     var node = this;
-    var opt = {};
+    var opt = {hydra_exec_host: "mosquitto"};
 
     this.on('input', function(msg){
-      exec({cmd: 'avahi-browse -a -r -t'}, opt, function(err, stdout, stderr) {
+      exec('avahi-browse -a -r -t', opt, function(err, stdout, stderr) {
         if(err){
           msg.scan = [];
           node.send(msg);
